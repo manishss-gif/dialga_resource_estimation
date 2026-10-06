@@ -1,0 +1,2 @@
+projectq==0.8.0
+mpmath==1.4.1
