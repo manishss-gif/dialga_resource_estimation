@@ -1,1 +1,0 @@
-dialga128_ct_ld_full_grover.py

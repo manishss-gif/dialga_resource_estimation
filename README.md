@@ -33,7 +33,8 @@ pip install projectq==0.8.0 mpmath==1.4.1
 **Note:** ProjectQ 0.8.0 builds a C++ extension, and recent `setuptools` releases break that build (`AttributeError: 'Compiler' object has no attribute 'dry_run'`). If the installation fails, install with an older `setuptools` as a build constraint:
 ```bash
 echo "setuptools<75" > constraints.txt
-PIP_CONSTRAINT=constraints.txt pip install -r requirements.txt
+pip install --build-constraint constraints.txt -r requirements.txt   # pip >= 25.3
+# with older pip:  PIP_CONSTRAINT=constraints.txt pip install -r requirements.txt
 # or, with uv:
 uv pip install --build-constraint constraints.txt -r requirements.txt
 ```
@@ -172,5 +173,3 @@ Reports total resources including initial state preparation, all $N_G = 267,257,
 | `run_all_resources.sh` | One-step automated execution of all resource estimators. |
 | `run_all_tests.sh` | One-step automated execution of all test suites. |
 | `LICENSE` | Anonymous MIT License. |
-
-*Note: For backwards compatibility, symbolic links from legacy `dialaga*` names to `dialga*` are also included.*
